@@ -69,7 +69,7 @@ result = mapper.map("The AI agent will autonomously generate reports and send em
 
 print(result.statement)
 for absence in result.absences:
-    print(f"  • {absence.name} ({absence.type.value}) [{absence.context}]")
+    print(f"  - {absence.name} ({absence.type.value}) [{absence.context}]")
 print(f"Kernel compliant: {result.kernel_compliant}")
 ```
 
@@ -159,7 +159,21 @@ If the mapper’s output contains solution language, it flags a kernel violation
 
 ## Relationship to Sovereign Thinking Tools
 
-This implementation corresponds to Tool 6 in [Sovereign Thinking Tools v3.0](https://github.com/richard-porter/where-to-start). The protocol document remains the primary reference. This repository is the software implementation — the same tool in a different register.
+This implementation corresponds to Tool 6 in [Sovereign Thinking Tools v3.2](https://github.com/richard-porter/where-to-start). The protocol document remains the primary reference. This repository is the software implementation — the same tool in a different register.
+
+-----
+
+## Governance
+
+This tool operates under the [Frozen Kernel](https://github.com/richard-porter/frozen-kernel) — a deterministic safety layer for human-AI interaction. The Frozen Kernel is the architectural spine of the Richard Porter ecosystem. This tool operates under it. Never inside it.
+
+**Accountability owner:** Richard Porter (GitHub: richard-porter)
+
+**Failure protocol:** Honest failure over graceful failure. If the tool produces output that violates kernel compliance, it flags the violation explicitly rather than suppressing it or returning a partial result. A tool that fails loudly is safer than a tool that fails quietly.
+
+**Review cycle:** Version-tagged releases. Current version: v1.0. Breaking changes increment the major version. Calibration improvements increment the minor version. A healthcare domain activation issue identified in external testing (February 2026) is logged as a known calibration issue pending v1.1 review.
+
+**Known open problem:** Healthcare domain detection may activate on keyword proximity rather than document context, producing false positives on non-healthcare documents. This is a calibration issue, not a structural fault. Contributions targeting domain detection precision are the highest-value open problem. See <CONTRIBUTING.md>.
 
 -----
 
