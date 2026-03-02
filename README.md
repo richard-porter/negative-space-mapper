@@ -185,5 +185,11 @@ The only ask: **if you extend the absence catalog, share what you find.**
 
 -----
 
+## Suggested GitHub Topics
+
+`ai-safety` · `ai-governance` · `llm-safety` · `ai-alignment` · `behavioral-safety` · `deterministic-safety` · `human-ai-interaction` · `ai-ethics` · `ai-accountability` · `responsible-ai` · `legal-ai` · `financial-ai` · `mental-health-ai`
+
+-----
+
 *Negative Space Mapper · v1.0 · Frozen Kernel System*  
 *They leave. The knowledge stays.*
