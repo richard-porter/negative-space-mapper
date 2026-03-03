@@ -50,7 +50,7 @@ def main():
         if not path.exists():
             print(f"Error: File {path} not found", file=sys.stderr)
             sys.exit(1)
-        text = path.read_text()
+        text = path.read_text(encoding="utf-8")
     else:
         text = args.input
 
